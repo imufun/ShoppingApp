@@ -11,5 +11,6 @@ import UIKit
 class Cell : UICollectionViewCell {
     
     @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var cellPriceLabel: UILabel!
     @IBOutlet weak var cellImageView: UIImageView!
 }
