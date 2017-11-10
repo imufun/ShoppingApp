@@ -10,4 +10,5 @@ import Foundation
 
 class SingletonManager {
     static let model = Model()
+    static let cart = Cart()
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED01E6D81FB611C300BE37B2 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED01E6D61FB611C300BE37B2 /* CoreData.xcdatamodeld */; };
 		ED01E6DA1FB61B7200BE37B2 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED01E6D91FB61B7200BE37B2 /* CartViewController.swift */; };
+		ED01E6DC1FB620B700BE37B2 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED01E6DB1FB620B700BE37B2 /* Cart.swift */; };
 		ED19AEA71FB5C3DC00071CC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEA61FB5C3DC00071CC7 /* AppDelegate.swift */; };
 		ED19AEA91FB5C3DC00071CC7 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEA81FB5C3DC00071CC7 /* MasterViewController.swift */; };
 		ED19AEAB1FB5C3DC00071CC7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEAA1FB5C3DC00071CC7 /* DetailViewController.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		ED01E6D71FB611C300BE37B2 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		ED01E6D91FB61B7200BE37B2 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		ED01E6DB1FB620B700BE37B2 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		ED19AEA31FB5C3DC00071CC7 /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED19AEA61FB5C3DC00071CC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED19AEA81FB5C3DC00071CC7 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -143,13 +145,14 @@
 				ED19AEAF1FB5C3DC00071CC7 /* Assets.xcassets */,
 				ED19AEB11FB5C3DC00071CC7 /* LaunchScreen.storyboard */,
 				ED19AEEA1FB5D29500071CC7 /* Main.storyboard */,
-				ED01E6D91FB61B7200BE37B2 /* CartViewController.swift */,
 				ED19AEB41FB5C3DC00071CC7 /* Info.plist */,
 				ED19AEED1FB5D42900071CC7 /* Model.swift */,
 				ED19AEEF1FB5D51300071CC7 /* SingletonManager.swift */,
+				ED01E6DB1FB620B700BE37B2 /* Cart.swift */,
 				ED19AEF11FB5D7C500071CC7 /* Cell.swift */,
 				ED19AEF31FB5DA0400071CC7 /* ProductsViewController.swift */,
 				ED19AEF51FB5E42900071CC7 /* ProductViewController.swift */,
+				ED01E6D91FB61B7200BE37B2 /* CartViewController.swift */,
 				ED19AEF71FB5EDDB00071CC7 /* Product.swift */,
 			);
 			path = ShoppingApp;
@@ -316,6 +319,7 @@
 				ED19AEAB1FB5C3DC00071CC7 /* DetailViewController.swift in Sources */,
 				ED19AEA91FB5C3DC00071CC7 /* MasterViewController.swift in Sources */,
 				ED19AEF81FB5EDDB00071CC7 /* Product.swift in Sources */,
+				ED01E6DC1FB620B700BE37B2 /* Cart.swift in Sources */,
 				ED01E6D81FB611C300BE37B2 /* CoreData.xcdatamodeld in Sources */,
 				ED01E6DA1FB61B7200BE37B2 /* CartViewController.swift in Sources */,
 				ED19AEFA1FB5F4B400071CC7 /* SwiftyJSON.swift in Sources */,
