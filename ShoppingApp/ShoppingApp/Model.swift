@@ -49,7 +49,7 @@ class Model {
                 {
                     if products[count].cart
                     {
-                        selectedProducts.append(selectedProducts[count])
+                        selectedProducts.append(products[count])
                     }
                 }
             }

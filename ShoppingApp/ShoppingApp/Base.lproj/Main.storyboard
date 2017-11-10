@@ -230,7 +230,7 @@
         <!--Detail-->
         <scene sceneID="fhS-eO-KgJ">
             <objects>
-                <viewController title="Detail" id="QyR-0f-N2C" customClass="ProductsViewController" customModule="ShoppingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="QyR-0f-N2C" customClass="CartViewController" customModule="ShoppingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j6T-tn-hgR"/>
                         <viewControllerLayoutGuide type="bottom" id="BKM-Sx-m3o"/>
@@ -288,7 +288,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Cart" id="tFy-qo-lSD"/>
                     <connections>
-                        <outlet property="collectionView" destination="jDx-iZ-6hk" id="qfE-gw-R6K"/>
+                        <outlet property="collectionView" destination="jDx-iZ-6hk" id="yWW-ZP-S7J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dW-7S-AYn" sceneMemberID="firstResponder"/>
@@ -488,7 +488,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RJ-MW-GaG">
-                                <rect key="frame" x="100" y="471" width="175" height="76"/>
+                                <rect key="frame" x="16" y="471" width="343" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Add to Cart"/>
