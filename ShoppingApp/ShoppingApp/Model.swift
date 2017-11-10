@@ -73,11 +73,10 @@ class Model {
                     {
                         let newProduct = Product()
                         newProduct.name = json[count]["name"].string
-                        newProduct.price = json[count]["price"].string
+                        newProduct.price = json[count]["price"].string // this actually gets nothing at all
                         newProduct.details = json[count]["description"].string
                         newProduct.category = json[count]["category"].string
                         newProduct.uid = json[count]["uid"].string
-                        
                         let imgURL = json[count]["image"].string!
                         //print(json[count]["image"].string)
                         
@@ -102,7 +101,6 @@ class Model {
             let results = try managedContext.fetch(fetchRequest)
             
             storedProducts = results as! [NSManagedObject]
-            
             if (storedProducts.count > 0)
             {
                 for index in 0 ... storedProducts.count - 1
@@ -111,15 +109,20 @@ class Model {
                     
                     let image = UIImage(data: binaryData)
                     let details = storedProducts[index].value(forKey: "details") as! String
+                    //print(details)
                     let name = storedProducts[index].value(forKey: "name") as! String
+                    //print(name)
                     let uid = storedProducts[index].value(forKey: "uid") as! String
-                    let cart = storedProducts[index].value(forKey: "cart") as! Bool
+                    //print(uid)
                     let price = storedProducts[index].value(forKey: "price") as! String
+                    //print(price)
                     let category = storedProducts[index].value(forKey: "category") as! String
+                    //print(category)
+                    let cart = storedProducts[index].value(forKey: "cart") as! Bool
                     
-                    let loadedRecipe = Product(uid: uid, name: name, details: details, image: image!, cart: cart, price: price, category: category);
+                    let loadedProduct = Product(uid: uid, name: name, details: details, image: image!, cart: cart, price: price, category: category);
                     
-                    products.append(loadedRecipe)
+                    products.append(loadedProduct)
                 }
             }
         }
@@ -129,7 +132,7 @@ class Model {
         }
     }
     
-    func checkForRecipe(_ searchItem: Product) -> Int {
+    func checkForProduct(_ searchItem: Product) -> Int {
         var targetIndex = -1
         
         if (products.count > 0) {
@@ -144,7 +147,7 @@ class Model {
     }
     
     func addItemToProducts(_ newProduct: Product!, imageURL: String) {
-        if (checkForRecipe(newProduct) == -1)
+        if (checkForProduct(newProduct) == -1)
         {
             let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             
@@ -159,6 +162,8 @@ class Model {
             productToAdd.setValue(newProduct.details, forKey: "details")
             productToAdd.setValue(newProduct.uid, forKey: "uid")
             productToAdd.setValue(newProduct.cart, forKey: "cart")
+            productToAdd.setValue(newProduct.price, forKey: "price")
+            productToAdd.setValue(newProduct.category, forKey: "category")
             
             do
             {

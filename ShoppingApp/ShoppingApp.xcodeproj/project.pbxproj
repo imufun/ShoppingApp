@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED01E6D81FB611C300BE37B2 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED01E6D61FB611C300BE37B2 /* CoreData.xcdatamodeld */; };
 		ED19AEA71FB5C3DC00071CC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEA61FB5C3DC00071CC7 /* AppDelegate.swift */; };
 		ED19AEA91FB5C3DC00071CC7 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEA81FB5C3DC00071CC7 /* MasterViewController.swift */; };
 		ED19AEAB1FB5C3DC00071CC7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEAA1FB5C3DC00071CC7 /* DetailViewController.swift */; };
@@ -28,7 +29,6 @@
 		ED19AEF61FB5E42900071CC7 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEF51FB5E42900071CC7 /* ProductViewController.swift */; };
 		ED19AEF81FB5EDDB00071CC7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEF71FB5EDDB00071CC7 /* Product.swift */; };
 		ED19AEFA1FB5F4B400071CC7 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEF91FB5F4B400071CC7 /* SwiftyJSON.swift */; };
-		ED536C331FB5FF310051B137 /* CookingApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED536C311FB5FF310051B137 /* CookingApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED01E6D71FB611C300BE37B2 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		ED19AEA31FB5C3DC00071CC7 /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED19AEA61FB5C3DC00071CC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED19AEA81FB5C3DC00071CC7 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		ED19AEF51FB5E42900071CC7 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		ED19AEF71FB5EDDB00071CC7 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		ED19AEF91FB5F4B400071CC7 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		ED536C321FB5FF310051B137 /* CookingApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CookingApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +133,7 @@
 		ED19AEA51FB5C3DC00071CC7 /* ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
+				ED01E6D61FB611C300BE37B2 /* CoreData.xcdatamodeld */,
 				ED19AEF91FB5F4B400071CC7 /* SwiftyJSON.swift */,
 				ED19AEA61FB5C3DC00071CC7 /* AppDelegate.swift */,
 				ED19AEA81FB5C3DC00071CC7 /* MasterViewController.swift */,
@@ -147,7 +148,6 @@
 				ED19AEF31FB5DA0400071CC7 /* ProductsViewController.swift */,
 				ED19AEF51FB5E42900071CC7 /* ProductViewController.swift */,
 				ED19AEF71FB5EDDB00071CC7 /* Product.swift */,
-				ED536C311FB5FF310051B137 /* CookingApp.xcdatamodeld */,
 			);
 			path = ShoppingApp;
 			sourceTree = "<group>";
@@ -313,10 +313,10 @@
 				ED19AEAB1FB5C3DC00071CC7 /* DetailViewController.swift in Sources */,
 				ED19AEA91FB5C3DC00071CC7 /* MasterViewController.swift in Sources */,
 				ED19AEF81FB5EDDB00071CC7 /* Product.swift in Sources */,
+				ED01E6D81FB611C300BE37B2 /* CoreData.xcdatamodeld in Sources */,
 				ED19AEFA1FB5F4B400071CC7 /* SwiftyJSON.swift in Sources */,
 				ED19AEF41FB5DA0400071CC7 /* ProductsViewController.swift in Sources */,
 				ED19AEF01FB5D51300071CC7 /* SingletonManager.swift in Sources */,
-				ED536C331FB5FF310051B137 /* CookingApp.xcdatamodeld in Sources */,
 				ED19AEA71FB5C3DC00071CC7 /* AppDelegate.swift in Sources */,
 				ED19AEEE1FB5D42900071CC7 /* Model.swift in Sources */,
 				ED19AEF61FB5E42900071CC7 /* ProductViewController.swift in Sources */,
@@ -588,14 +588,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		ED536C311FB5FF310051B137 /* CookingApp.xcdatamodeld */ = {
+		ED01E6D61FB611C300BE37B2 /* CoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				ED536C321FB5FF310051B137 /* CookingApp.xcdatamodel */,
+				ED01E6D71FB611C300BE37B2 /* CoreData.xcdatamodel */,
 			);
-			currentVersion = ED536C321FB5FF310051B137 /* CookingApp.xcdatamodel */;
-			name = CookingApp.xcdatamodeld;
-			path = ../CookingApp.xcdatamodeld;
+			currentVersion = ED01E6D71FB611C300BE37B2 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
