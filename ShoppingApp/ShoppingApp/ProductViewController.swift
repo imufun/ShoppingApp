@@ -9,9 +9,11 @@
 import UIKit
 
 class ProductViewController: DetailViewController {
+    
     let model = SingletonManager.model
     
     @IBOutlet weak var productImage: UIImageView!
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var cartButton: UIButton!
@@ -23,9 +25,9 @@ class ProductViewController: DetailViewController {
     }
     
     func setCartButton() {
-        cartButton.setTitle("+", for: UIControlState())
+        cartButton.setTitle("Add to cart (+)", for: UIControlState())
         if (self.productItem!.cart) {
-            cartButton.setTitle("-", for: UIControlState())
+            cartButton.setTitle("Remove from cart (-)", for: UIControlState())
         }
     }
     

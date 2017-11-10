@@ -205,7 +205,6 @@
                     <connections>
                         <outlet property="addToCartButton" destination="S9w-QL-Mfl" id="FkM-bU-qqh"/>
                         <outlet property="collectionView" destination="jxN-nc-jtP" id="yHN-ks-l4J"/>
-                        <segue destination="d7T-HM-Wer" kind="showDetail" identifier="" id="tPv-Pb-KlL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fse-3a-OIG" sceneMemberID="firstResponder"/>
@@ -488,28 +487,31 @@
                                 <rect key="frame" x="16" y="72" width="343" height="391"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuS-z9-SFI">
-                                <rect key="frame" x="166" y="613" width="42" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RJ-MW-GaG">
+                                <rect key="frame" x="100" y="471" width="175" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Add to Cart"/>
+                                <connections>
+                                    <action selector="cartSelected:" destination="wAH-vG-u6D" eventType="touchUpInside" id="MEa-UG-pke"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuS-z9-SFI">
+                                <rect key="frame" x="16" y="555" width="343" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RJ-MW-GaG">
-                                <rect key="frame" x="100" y="480" width="175" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <state key="normal" title="Add to Cart"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.56986435069999997" green="0.23577278169999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Product" id="0q6-VC-tZP"/>
                     <connections>
-                        <outlet property="addToCart" destination="4RJ-MW-GaG" id="bqW-EK-Qui"/>
-                        <outlet property="productImage" destination="a1j-ic-GoS" id="1r0-7L-f3s"/>
-                        <outlet property="titleLabel" destination="IuS-z9-SFI" id="NFG-ZO-DCS"/>
+                        <outlet property="cartButton" destination="4RJ-MW-GaG" id="hXt-Gy-7aU"/>
+                        <outlet property="productImage" destination="a1j-ic-GoS" id="iAt-rO-p47"/>
+                        <outlet property="titleLabel" destination="IuS-z9-SFI" id="8fS-D7-19A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6QD-7M-0Bg" sceneMemberID="firstResponder"/>
@@ -522,6 +524,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Rvk-oW-fKR"/>
-        <segue reference="tPv-Pb-KlL"/>
     </inferredMetricsTieBreakers>
 </document>
