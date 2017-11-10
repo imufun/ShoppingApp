@@ -135,7 +135,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jxN-nc-jtP">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jxN-nc-jtP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yfn-Yh-AQy">
@@ -157,7 +157,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UN-8J-aSz">
-                                                    <rect key="frame" x="8" y="117" width="134" height="33"/>
+                                                    <rect key="frame" x="8" y="117" width="62" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -177,19 +177,22 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="jxN-nc-jtP" secondAttribute="trailing" id="3ro-3r-PWM"/>
                             <constraint firstItem="jxN-nc-jtP" firstAttribute="top" secondItem="S9w-QL-Mfl" secondAttribute="top" id="HmT-Sm-dcG"/>
+                            <constraint firstItem="sFD-wz-BRU" firstAttribute="top" secondItem="jxN-nc-jtP" secondAttribute="bottom" id="g56-KD-lUY"/>
                             <constraint firstItem="jxN-nc-jtP" firstAttribute="leading" secondItem="S9w-QL-Mfl" secondAttribute="leading" id="mLO-oC-vkz"/>
-                            <constraint firstItem="sFD-wz-BRU" firstAttribute="top" secondItem="jxN-nc-jtP" secondAttribute="bottom" id="xLG-cA-TcS"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Products" id="ClJ-Q7-G8w"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addToCartButton" destination="S9w-QL-Mfl" id="FkM-bU-qqh"/>
                         <outlet property="collectionView" destination="jxN-nc-jtP" id="yHN-ks-l4J"/>
+                        <segue destination="d7T-HM-Wer" kind="showDetail" identifier="" id="tPv-Pb-KlL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fse-3a-OIG" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="932.38380809595208"/>
+            <point key="canvasLocation" x="708" y="933"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pG9-03-qaE">
@@ -276,6 +279,22 @@
             <point key="canvasLocation" x="1370" y="932"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="Nbw-8R-c6v">
+            <objects>
+                <navigationController id="d7T-HM-Wer" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eJz-ow-key">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wAH-vG-u6D" kind="relationship" relationship="rootViewController" id="nqN-rH-T2f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uXc-eV-HLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="1645"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="xmu-nV-230">
             <objects>
                 <navigationController id="EIi-Kf-yEn" sceneMemberID="viewController">
@@ -330,6 +349,7 @@
         <!--Detail-->
         <scene sceneID="Bd2-Pu-qMv">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="feh-IC-RJJ" sceneMemberID="firstResponder"/>
                 <viewController title="Detail" id="IIp-86-r8E" customClass="DetailViewController" customModule="ShoppingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4iZ-Sc-91u"/>
@@ -343,7 +363,6 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Search" id="lYe-TY-lja"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="feh-IC-RJJ" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2028" y="930.58470764617698"/>
         </scene>
@@ -434,6 +453,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MII-hQ-BJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3402" y="152"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="cfk-sN-w0w">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6QD-7M-0Bg" sceneMemberID="firstResponder"/>
+                <viewController title="Detail" id="wAH-vG-u6D" customClass="ProductViewController" customModule="ShoppingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wjW-Gq-CV3"/>
+                        <viewControllerLayoutGuide type="bottom" id="aoH-oJ-aDH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ghv-BN-HuT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a1j-ic-GoS">
+                                <rect key="frame" x="16" y="72" width="343" height="391"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuS-z9-SFI">
+                                <rect key="frame" x="166" y="613" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RJ-MW-GaG">
+                                <rect key="frame" x="100" y="480" width="175" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Add to Cart"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.56986435069999997" green="0.23577278169999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Product" id="0q6-VC-tZP"/>
+                    <connections>
+                        <outlet property="addToCart" destination="4RJ-MW-GaG" id="bqW-EK-Qui"/>
+                        <outlet property="productImage" destination="a1j-ic-GoS" id="1r0-7L-f3s"/>
+                        <outlet property="titleLabel" destination="IuS-z9-SFI" id="NFG-ZO-DCS"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="708" y="2419.3403298350827"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

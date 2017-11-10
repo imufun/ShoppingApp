@@ -13,6 +13,7 @@ class ProductsViewController: DetailViewController, UICollectionViewDataSource, 
     let model = SingletonManager.model
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var addToCartButton: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,29 @@ class ProductsViewController: DetailViewController, UICollectionViewDataSource, 
     func configureCollectionView() {
         self.collectionView!.dataSource = self
         self.collectionView!.delegate = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Find out what row was selected
+        let indexPath = self.collectionView?.indexPath(for: sender as! Cell)
+        
+        //sender as? NSIndexPath
+        
+        // Grab the detail view
+        let detailView = (segue.destination as! UINavigationController).topViewController as! ProductViewController
+        
+        // Get the selected cell's image
+        let product = model.products[indexPath!.row]
+        
+        // Pass the content to the detail view
+        detailView.productItem = product
+        
+        // Set up navigation on detail view
+        detailView.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+        detailView.navigationItem.leftItemsSupplementBackButton = true
+        
+        
     }
     
     // MARK: UICollectionViewDataSource
@@ -36,7 +60,8 @@ class ProductsViewController: DetailViewController, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
-        cell.cellImageView.image = model.products[indexPath.row]
+        cell.cellImageView.image = model.products[indexPath.row].image
+        cell.cellLabel.text = model.products[indexPath.row].name
         return cell
     }
     
@@ -49,4 +74,11 @@ class ProductsViewController: DetailViewController, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
     }
+    
+    // MARK: addItemToCart
+    
+    @IBAction func addItemToCart(_ sender: Any) {
+        //model.addItemToCart(model.)
+    }
+    
 }

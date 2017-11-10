@@ -7,14 +7,25 @@
 //
 
 import UIKit
+import CoreData
 
 class MasterViewController: UITableViewController {
     
 
     var detailViewController: DetailViewController? = nil
+    var managedObjectContext: NSManagedObjectContext? = nil
     //var objects = [Any]()
     
     let model = SingletonManager.model
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            self.clearsSelectionOnViewWillAppear = false
+            self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
+        }
+    }
 
 
     override func viewDidLoad() {
@@ -22,8 +33,6 @@ class MasterViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
 
-        
-        
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
