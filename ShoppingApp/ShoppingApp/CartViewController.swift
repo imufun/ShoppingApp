@@ -33,9 +33,6 @@ class CartViewController: DetailViewController, UICollectionViewDataSource, UICo
         self.collectionView!.reloadData()
     }
     
-    func calcTotalPrice(price: String) {
-        
-    }
     
     // Mark: Segue
     
@@ -55,13 +52,10 @@ class CartViewController: DetailViewController, UICollectionViewDataSource, UICo
         // Pass the content to the detail view
         detailView.productItem = product
         
-        let price = model.cart[indexPath!.row].price
-        
         // Set up navigation on detail view
         detailView.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
         detailView.navigationItem.leftItemsSupplementBackButton = true
         
-        self.calcTotalPrice(price: price!)
     }
     
     // MARK: UICollectionView Data Source
@@ -85,7 +79,7 @@ class CartViewController: DetailViewController, UICollectionViewDataSource, UICo
         // Set the text in the cell
         cell.cellLabel.text = model.cart[indexPath.row].name
         
-        //cell.cellPriceLabel.text = model.cart[indexPath.row].price
+        cell.cellPriceLabel.text = "$" + model.products[indexPath.row].price!
         
         // Return the cell
         return cell
