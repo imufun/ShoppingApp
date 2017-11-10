@@ -31,10 +31,10 @@ class MasterViewController: UITableViewController {
         
         segueDictionary["Homepage"] = UIImage(named: "home")
         segueDictionary["Products"] = UIImage(named: "product")
-        segueDictionary["Search"] = UIImage(named: "product")
-        segueDictionary["Cart"] = UIImage(named: "product")
-        segueDictionary["Finder"] = UIImage(named: "product")
-        segueDictionary["Checkout"] = UIImage(named: "product")
+        segueDictionary["Search"] = UIImage(named: "find")
+        segueDictionary["Cart"] = UIImage(named: "cart")
+        segueDictionary["Finder"] = UIImage(named: "map")
+        segueDictionary["Checkout"] = UIImage(named: "checkout")
         
         
         if let split = self.splitViewController {
@@ -105,6 +105,13 @@ class MasterViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return false
     }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Set the segue
+        self.performSegue(withIdentifier: segueArray[indexPath.row], sender: self)
+    }
+    
 
 
 }
