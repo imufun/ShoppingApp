@@ -10,31 +10,18 @@ import UIKit
 
 class MasterViewController: UITableViewController {
     
-    // segue stuff
-    var segueArray = [String]()
-    var segueDictionary = Dictionary<String, UIImage>();
 
     var detailViewController: DetailViewController? = nil
     //var objects = [Any]()
+    
+    let model = SingletonManager.model
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        segueArray.append("Homepage")
-        segueArray.append("Products")
-        segueArray.append("Search")
-        segueArray.append("Cart")
-        segueArray.append("Finder")
-        segueArray.append("Checkout")
-        
-        segueDictionary["Homepage"] = UIImage(named: "home")
-        segueDictionary["Products"] = UIImage(named: "product")
-        segueDictionary["Search"] = UIImage(named: "find")
-        segueDictionary["Cart"] = UIImage(named: "cart")
-        segueDictionary["Finder"] = UIImage(named: "map")
-        segueDictionary["Checkout"] = UIImage(named: "checkout")
+
         
         
         if let split = self.splitViewController {
@@ -64,10 +51,10 @@ class MasterViewController: UITableViewController {
             let detailView = (segue.destination as! UINavigationController).topViewController as! DetailViewController
             
             // Get the selected cell's text
-            let key = segueArray[indexPath.row]
+            let key = model.segueArray[indexPath.row]
             
             // Get the content to display
-            let content = segueDictionary[key]
+            let content = model.segueDictionary[key]
             
             // Pass the content to the detail view
             detailView.detailItem = content
@@ -86,7 +73,7 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return segueArray.count
+        return model.segueArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,7 +81,7 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         // Get the object to put in the cell
-        let text = segueArray[indexPath.row]
+        let text = model.segueArray[indexPath.row]
         
         // Set the text in the cell
         cell.textLabel!.text = text
@@ -109,7 +96,7 @@ class MasterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Set the segue
-        self.performSegue(withIdentifier: segueArray[indexPath.row], sender: self)
+        self.performSegue(withIdentifier: model.segueArray[indexPath.row], sender: model)
     }
     
 

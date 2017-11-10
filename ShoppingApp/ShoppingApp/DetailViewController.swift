@@ -14,16 +14,18 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailImage: UIImageView!
     
-    var detailItem: AnyObject?
+    var detailItem: AnyObject? {
+        didSet {
+            // Update the view.
+            self.configureView()
+        }
+    }
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            
-            detailImage.image = detail as? UIImage
-            
+        if let detail = self.detailItem {
             if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+                label.text = (detail.value(forKey: "timeStamp")! as AnyObject).description
             }
         }
     }

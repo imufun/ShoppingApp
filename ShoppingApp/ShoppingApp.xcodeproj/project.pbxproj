@@ -21,6 +21,10 @@
 		ED19AEE51FB5CD2800071CC7 /* find.png in Resources */ = {isa = PBXBuildFile; fileRef = ED19AEE31FB5CD2800071CC7 /* find.png */; };
 		ED19AEE71FB5CD5900071CC7 /* cart.png in Resources */ = {isa = PBXBuildFile; fileRef = ED19AEE61FB5CD5900071CC7 /* cart.png */; };
 		ED19AEEC1FB5D29500071CC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED19AEEA1FB5D29500071CC7 /* Main.storyboard */; };
+		ED19AEEE1FB5D42900071CC7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEED1FB5D42900071CC7 /* Model.swift */; };
+		ED19AEF01FB5D51300071CC7 /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEEF1FB5D51300071CC7 /* SingletonManager.swift */; };
+		ED19AEF21FB5D7C500071CC7 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEF11FB5D7C500071CC7 /* Cell.swift */; };
+		ED19AEF41FB5DA0400071CC7 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEF31FB5DA0400071CC7 /* ProductsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		ED19AEE31FB5CD2800071CC7 /* find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find.png; sourceTree = "<group>"; };
 		ED19AEE61FB5CD5900071CC7 /* cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart.png; sourceTree = "<group>"; };
 		ED19AEEB1FB5D29500071CC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED19AEED1FB5D42900071CC7 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		ED19AEEF1FB5D51300071CC7 /* SingletonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
+		ED19AEF11FB5D7C500071CC7 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		ED19AEF31FB5DA0400071CC7 /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,10 @@
 				ED19AEB11FB5C3DC00071CC7 /* LaunchScreen.storyboard */,
 				ED19AEEA1FB5D29500071CC7 /* Main.storyboard */,
 				ED19AEB41FB5C3DC00071CC7 /* Info.plist */,
+				ED19AEED1FB5D42900071CC7 /* Model.swift */,
+				ED19AEEF1FB5D51300071CC7 /* SingletonManager.swift */,
+				ED19AEF11FB5D7C500071CC7 /* Cell.swift */,
+				ED19AEF31FB5DA0400071CC7 /* ProductsViewController.swift */,
 			);
 			path = ShoppingApp;
 			sourceTree = "<group>";
@@ -288,7 +300,11 @@
 			files = (
 				ED19AEAB1FB5C3DC00071CC7 /* DetailViewController.swift in Sources */,
 				ED19AEA91FB5C3DC00071CC7 /* MasterViewController.swift in Sources */,
+				ED19AEF41FB5DA0400071CC7 /* ProductsViewController.swift in Sources */,
+				ED19AEF01FB5D51300071CC7 /* SingletonManager.swift in Sources */,
 				ED19AEA71FB5C3DC00071CC7 /* AppDelegate.swift in Sources */,
+				ED19AEEE1FB5D42900071CC7 /* Model.swift in Sources */,
+				ED19AEF21FB5D7C500071CC7 /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
