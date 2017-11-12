@@ -31,6 +31,7 @@
 		ED19AEF61FB5E42900071CC7 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEF51FB5E42900071CC7 /* ProductViewController.swift */; };
 		ED19AEF81FB5EDDB00071CC7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEF71FB5EDDB00071CC7 /* Product.swift */; };
 		ED19AEFA1FB5F4B400071CC7 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19AEF91FB5F4B400071CC7 /* SwiftyJSON.swift */; };
+		ED2AE8F51FB7D7B8008D91D3 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AE8F41FB7D7B8008D91D3 /* CheckoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		ED19AEF51FB5E42900071CC7 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		ED19AEF71FB5EDDB00071CC7 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		ED19AEF91FB5F4B400071CC7 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		ED2AE8F41FB7D7B8008D91D3 /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				ED19AEF31FB5DA0400071CC7 /* ProductsViewController.swift */,
 				ED19AEF51FB5E42900071CC7 /* ProductViewController.swift */,
 				ED01E6D91FB61B7200BE37B2 /* CartViewController.swift */,
+				ED2AE8F41FB7D7B8008D91D3 /* CheckoutViewController.swift */,
 				ED19AEF71FB5EDDB00071CC7 /* Product.swift */,
 			);
 			path = ShoppingApp;
@@ -322,6 +325,7 @@
 				ED01E6DC1FB620B700BE37B2 /* Cart.swift in Sources */,
 				ED01E6D81FB611C300BE37B2 /* CoreData.xcdatamodeld in Sources */,
 				ED01E6DA1FB61B7200BE37B2 /* CartViewController.swift in Sources */,
+				ED2AE8F51FB7D7B8008D91D3 /* CheckoutViewController.swift in Sources */,
 				ED19AEFA1FB5F4B400071CC7 /* SwiftyJSON.swift in Sources */,
 				ED19AEF41FB5DA0400071CC7 /* ProductsViewController.swift in Sources */,
 				ED19AEF01FB5D51300071CC7 /* SingletonManager.swift in Sources */,
