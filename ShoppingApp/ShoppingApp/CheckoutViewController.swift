@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Foundation
 
-
+// TODO: Make items go into cart more than once and add credit card check
 class CheckoutViewController: DetailViewController {
 
     let model = SingletonManager.model
@@ -23,6 +23,8 @@ class CheckoutViewController: DetailViewController {
     @IBOutlet weak var cardExpiryText: UITextField!
     @IBOutlet weak var cardCSVText: UITextField!
     @IBOutlet weak var purchaseButton: UIButton!
+    
+    
     
     // We have to make a purchase using
     // http://partiklezoo.com/3dprinting/?action=purchase&u0001=2&total=120&material=pla&painting=false
