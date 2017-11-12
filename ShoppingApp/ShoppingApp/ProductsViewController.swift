@@ -62,7 +62,9 @@ class ProductsViewController: DetailViewController, UICollectionViewDataSource, 
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
         cell.cellImageView.image = model.products[indexPath.row].image
         cell.cellLabel.text = model.products[indexPath.row].name
-        cell.cellPriceLabel.text = "$" + model.products[indexPath.row].price!
+        if let label = cell.cellPriceLabel {
+            label.text = "$" + model.products[indexPath.row].price
+        }
         return cell
     }
     

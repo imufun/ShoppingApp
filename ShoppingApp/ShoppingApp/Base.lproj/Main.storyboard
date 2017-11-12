@@ -267,18 +267,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KS-FB-xw4">
-                                                    <rect key="frame" x="8" y="153" width="134" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </view>
                                         <connections>
                                             <outlet property="cellImageView" destination="GEj-Lc-aj0" id="jzW-b6-UHF"/>
                                             <outlet property="cellLabel" destination="ZVM-u0-Mn3" id="HbY-oC-FAX"/>
+                                            <segue destination="VRZ-33-eJa" kind="showDetail" id="lXh-bT-b8N"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -499,11 +493,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a1j-ic-GoS">
-                                <rect key="frame" x="16" y="72" width="343" height="391"/>
+                                <rect key="frame" x="83" y="72" width="208" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RJ-MW-GaG">
-                                <rect key="frame" x="16" y="471" width="343" height="76"/>
+                                <rect key="frame" x="16" y="258" width="343" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Add to Cart"/>
@@ -518,8 +512,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuS-z9-SFI">
-                                <rect key="frame" x="16" y="555" width="343" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuS-z9-SFI">
+                                <rect key="frame" x="16" y="325" width="343" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4It-eR-gaM">
+                                <rect key="frame" x="16" y="393" width="343" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -532,6 +533,7 @@
                     <navigationItem key="navigationItem" title="Product" id="0q6-VC-tZP"/>
                     <connections>
                         <outlet property="cartButton" destination="4RJ-MW-GaG" id="hXt-Gy-7aU"/>
+                        <outlet property="descriptionLabel" destination="4It-eR-gaM" id="RhD-Vq-Ega"/>
                         <outlet property="priceLabel" destination="thV-m3-ZN7" id="smg-jl-8rW"/>
                         <outlet property="productImage" destination="a1j-ic-GoS" id="iAt-rO-p47"/>
                         <outlet property="titleLabel" destination="IuS-z9-SFI" id="8fS-D7-19A"/>
@@ -540,6 +542,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6QD-7M-0Bg" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708" y="2419.3403298350827"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wzJ-nO-XcE">
+            <objects>
+                <navigationController id="VRZ-33-eJa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="30s-cY-MuB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hsV-xJ-uh8" kind="relationship" relationship="rootViewController" id="XvX-wH-DpR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4N1-EG-ENS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1369" y="1645"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="fPw-6t-TgP">
+            <objects>
+                <viewController title="Detail" id="hsV-xJ-uh8" customClass="ProductViewController" customModule="ShoppingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Et4-QJ-7V8"/>
+                        <viewControllerLayoutGuide type="bottom" id="8ZL-81-8Gw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fov-aJ-XdB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kuM-EL-dhP">
+                                <rect key="frame" x="16" y="72" width="343" height="391"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNk-YE-BWb">
+                                <rect key="frame" x="16" y="471" width="343" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Add to Cart"/>
+                                <connections>
+                                    <action selector="cartSelected:" destination="hsV-xJ-uh8" eventType="touchUpInside" id="XkX-XC-MDa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT2-lY-KWF">
+                                <rect key="frame" x="16" y="626" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVP-vP-zjd">
+                                <rect key="frame" x="16" y="555" width="343" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.25159040178571429" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Cart Product" id="pGQ-DO-9MH"/>
+                    <connections>
+                        <outlet property="cartButton" destination="GNk-YE-BWb" id="ZrK-Dv-0WG"/>
+                        <outlet property="priceLabel" destination="rT2-lY-KWF" id="n1n-Yg-ge5"/>
+                        <outlet property="productImage" destination="kuM-EL-dhP" id="npP-Us-Boe"/>
+                        <outlet property="titleLabel" destination="QVP-vP-zjd" id="m9N-62-D3O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mw4-JC-FsX" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1369" y="2419"/>
         </scene>
     </scenes>
     <resources>

@@ -73,7 +73,7 @@ class Model {
                     {
                         let newProduct = Product()
                         newProduct.name = json[count]["name"].string
-                        newProduct.price = json[count]["price"].string // this actually gets nothing at all
+                        newProduct.price = json[count]["price"].string
                         newProduct.details = json[count]["description"].string
                         newProduct.category = json[count]["category"].string
                         newProduct.uid = json[count]["uid"].string

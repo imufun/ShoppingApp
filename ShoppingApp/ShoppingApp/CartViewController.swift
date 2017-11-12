@@ -16,7 +16,7 @@ class CartViewController: DetailViewController, UICollectionViewDataSource, UICo
     
     let model = SingletonManager.model
     
-    let cart = SingletonManager.cart
+    let cart = SingletonManager.cart // total running price of everything
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +24,17 @@ class CartViewController: DetailViewController, UICollectionViewDataSource, UICo
         self.configureCollectionView()
     }
     
+    // This method is called when the user presses the back button on the ProductViewController
+    // Just incase they remove an item from the cart, the total price will update and refresh on the
+    // CartViewController (this)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.totalPrice.text = "Total Price $" + String(format:"%0.2f", cart.totalPrice!)
+    }
+    
     func configureCollectionView() {
         self.collectionView!.dataSource = self
         self.collectionView!.delegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.collectionView!.reloadData()
     }
     
     
@@ -69,19 +73,9 @@ class CartViewController: DetailViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        // Get an instancer of the prototype Cell we created
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
-        
-        // Set the image in the cell
         cell.cellImageView.image = model.cart[indexPath.row].image
-        
-        // Set the text in the cell
         cell.cellLabel.text = model.cart[indexPath.row].name
-        
-        cell.cellPriceLabel.text = "$" + model.products[indexPath.row].price!
-        
-        // Return the cell
         return cell
     }
     

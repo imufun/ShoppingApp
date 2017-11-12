@@ -22,6 +22,8 @@ class ProductViewController: DetailViewController {
     
     @IBOutlet weak var priceLabel: UILabel!
     
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     var productItem: Product? {
         didSet {
             
@@ -38,8 +40,13 @@ class ProductViewController: DetailViewController {
     override func configureView() {
         if let product = self.productItem {
             self.productImage.image = product.image
-            self.titleLabel.text = product.name
-            self.priceLabel.text = product.price
+            self.titleLabel.text = "Item name:\n" + product.name
+            if let label = self.priceLabel {
+                label.text = "Price:\n$" + product.price
+            }
+            if let label = self.descriptionLabel {
+                label.text = "Description:\n" + product.details
+            }
             self.setCartButton()
         }
     }

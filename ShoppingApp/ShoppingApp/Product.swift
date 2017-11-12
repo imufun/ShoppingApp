@@ -10,7 +10,7 @@ import UIKit
 
 class Product: NSObject {
     var image: UIImage?
-    var price: String?
+    var price: String!
     var category: String?
     var details: String! = ""
     var name: String! = ""
@@ -30,10 +30,11 @@ class Product: NSObject {
         self.category = category
     }
     
-    init(uid: String, name: String, details: String) {
+    init(uid: String, name: String, details: String, price: String) {
         self.uid = uid
         self.name = name
         self.details = details
+        self.price = price
         self.cart = false
     }
     
