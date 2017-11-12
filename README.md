@@ -6,7 +6,7 @@ Swift MasterView App
     “Search” function whereby users can easily locate a model
     “Cart”, which stores all information about the user's purchases and provides a running total in dollars. [done]
     “Finder”, which allows the user to find the closest 3D printing venue relative to their current location
-    “Checkout”, which allows the user to enter credit card details to make a purchase
+    “Checkout”, which allows the user to enter credit card details to make a purchase [90% done]
 
 
     Master-view controller with at least 6 different detail views configured in storyboard and containing different outlets (graphics, buttons, text fields, etc.) (30%) [done]
