@@ -76,6 +76,7 @@ class CartViewController: DetailViewController, UICollectionViewDataSource, UICo
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
         cell.cellImageView.image = model.cart[indexPath.row].image
         cell.cellLabel.text = model.cart[indexPath.row].name
+        cell.cellPriceLabel.text = "$" + model.cart[indexPath.row].price
         return cell
     }
     

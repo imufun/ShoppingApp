@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Foundation
 
-// TODO: Make items go into cart more than once and add credit card check
+// TODO: Make items go into cart more than once
 class CheckoutViewController: DetailViewController {
 
     let model = SingletonManager.model
@@ -23,7 +23,18 @@ class CheckoutViewController: DetailViewController {
     @IBOutlet weak var cardExpiryText: UITextField!
     @IBOutlet weak var cardCSVText: UITextField!
     @IBOutlet weak var purchaseButton: UIButton!
+    @IBOutlet weak var absButton: UIButton!
+    @IBOutlet weak var paintingButton: UIButton!
     
+    // Other variables
+    var abs: Bool = false;
+    var painting: Bool = false;
+    var material: String = "pla";
+    var isPainting: String = "false";
+    var ogCartPrice: Double = 0.0;
+    var printingPrice: Double = 0.0;
+    var absPrice: Double = 0.0;
+    var bothPrices: Double = 0.0;
     
     
     // We have to make a purchase using
@@ -31,9 +42,17 @@ class CheckoutViewController: DetailViewController {
     // Either POST or GET
 
     override func configureView() {
+        ogCartPrice = cart.totalPrice!;
         if let label = self.totalPrice {
             label.text = "$" + String(format:"%0.2f", cart.totalPrice!)
         }
+        
+        // take cart value, get printing and abs price then if true append later
+        // saves us time and stupid calculations
+        printingPrice = ogCartPrice + (ogCartPrice * 0.55);
+        absPrice = ogCartPrice + (ogCartPrice * 0.1);
+        bothPrices = ogCartPrice + (ogCartPrice * 0.1) + (ogCartPrice * 0.55);
+        
     }
     
     // thanks stackoverflow xx
@@ -60,8 +79,6 @@ class CheckoutViewController: DetailViewController {
     // MARK: Check Input
     
     // This function checks if everything is filled out
-    // If I have enough time and I am not lazy I will check if the CC is
-    // a real credit card
     // TODO: Just make it one if statement, it's not that hard
     @IBAction func checkInput(_ sender: Any) {
         var checked = false as Bool
@@ -101,11 +118,11 @@ class CheckoutViewController: DetailViewController {
         // so we need to format the string before making it do its thing
         // we need to find the amount of items in the cart before making the url(s), this is due tot he fact that u cant buy two items in one url if they are different ids
         // so lets count
-        let countOfCart = model.cart.count // wow so hard
+        let countOfCart = model.cart.count
         if (countOfCart == 0) {
             return
         }
-        // now we need to get each uid from the cart, can store in an array cause we lazy
+        // now we need to get each uid from the cart
         var cartUIDs = [String]()
         for index in 0...countOfCart - 1 {
             cartUIDs.append(model.cart[index].uid)
@@ -113,15 +130,33 @@ class CheckoutViewController: DetailViewController {
         var cartPrices = [String]()
         for dindex in 0...countOfCart - 1 {
             let priceIndex = model.cart[dindex].price.index(model.cart[dindex].price.startIndex, offsetBy: 2)
-            let stringApp = model.cart[dindex].price.substring(to: priceIndex)  // Hello
-            cartPrices.append(stringApp)
+            let stringApp = model.cart[dindex].price.substring(to: priceIndex)
+            if (abs == true && painting == true) {
+                let tempString = String(bothPrices).substring(to: priceIndex)
+                cartPrices.append(tempString)
+                material = "abs";
+                isPainting = "true";
+            } else if (abs == true) {
+                let tempString = String(absPrice).substring(to: priceIndex)
+                cartPrices.append(tempString)
+                material = "abs";
+                print(tempString)
+            } else if (painting == true) {
+                let tempString = String(printingPrice).substring(to: priceIndex)
+                cartPrices.append(tempString)
+                material = "abs";
+                isPainting = "true";
+                print(tempString)
+            } else {
+                cartPrices.append(stringApp)
+            }
         }
         
         // ok now we have the uid and amount of items we can now set up the urls in another array
         var urls = [String]()
         for vindex in 0...countOfCart - 1 {
             // ok so not gonna do the extra percent stuff im running tight on time here
-            urls.append("http://partiklezoo.com/3dprinting/?action=purchase&" + cartUIDs[vindex] + "=1&total=" + cartPrices[vindex] + "&material=pla&painting=false")
+            urls.append("http://partiklezoo.com/3dprinting/?action=purchase&" + cartUIDs[vindex] + "=1&total=" + cartPrices[vindex] + "&material=" + material + "&painting=" + isPainting)
         }
         let url = NSURL(string: urls[0])
         let config = URLSessionConfiguration.default
@@ -132,16 +167,21 @@ class CheckoutViewController: DetailViewController {
                 do {
                     let json = try JSON(data: data!)
                     // so we got the json, it should either be true or false
-                    // if true, return a popup saying purchased
+                    // if true, return a popup saying purchased, if false we should display a message saying invalid purchase
                     if (json["success"] == "true") {
-                        // THIS CRASHES IF THE USER IS ACTIVE IN A TEXTBOX
                         let alertController = UIAlertController(title: "Success!", message:
                             "Purchased Item(s) Successfully!", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-                        
-                        self.present(alertController, animated: true, completion: nil)
-                    } else {
-
+                        DispatchQueue.main.async() {
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                    } else { // this shouldn't get called ever, but just incase the server goes down or something
+                        let alertController = UIAlertController(title: "ERROR!", message:
+                            "Payment Rejected (ERROR)!", preferredStyle: UIAlertControllerStyle.alert)
+                        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                        DispatchQueue.main.async() {
+                            self.present(alertController, animated: true, completion: nil)
+                        }
                     }
                 }
                 catch let error as NSError
@@ -151,6 +191,64 @@ class CheckoutViewController: DetailViewController {
                 
         })
         task.resume()
+    }
+    
+    // MARK: Button Checks
+    
+    @IBAction func absCheck(_ button: UIButton) {
+        if (abs == true) {
+            button.setImage(#imageLiteral(resourceName: "Unchecked"), for: .normal)
+            abs = false;
+            if (painting == true) {
+                if let label = self.totalPrice {
+                    label.text = "$" + String(format:"%0.2f", printingPrice)
+                }
+            } else {
+                if let label = self.totalPrice {
+                    label.text = "$" + String(format:"%0.2f", ogCartPrice)
+                }
+            }
+        } else if (abs == false) {
+            button.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+            abs = true;
+            if (painting == true) {
+                if let label = self.totalPrice {
+                    label.text = "$" + String(format:"%0.2f", bothPrices)
+                }
+            } else {
+                if let label = self.totalPrice {
+                    label.text = "$" + String(format:"%0.2f", absPrice)
+                }
+            }
+        }
+    }
+    
+    @IBAction func paintingCheck(_ button: UIButton) {
+        if (painting == true) {
+            button.setImage(#imageLiteral(resourceName: "Unchecked"), for: .normal)
+            painting = false;
+            if (abs == true) {
+                if let label = self.totalPrice {
+                    label.text = "$" + String(format:"%0.2f", absPrice)
+                }
+            } else {
+                if let label = self.totalPrice {
+                    label.text = "$" + String(format:"%0.2f", ogCartPrice)
+                }
+            }
+        } else if (painting == false) {
+            button.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+            painting = true;
+            if (abs == true) {
+                if let label = self.totalPrice {
+                    label.text = "$" + String(format:"%0.2f", bothPrices)
+                }
+            } else {
+                if let label = self.totalPrice {
+                    label.text = "$" + String(format:"%0.2f", printingPrice)
+                }
+            }
+        }
     }
     
     

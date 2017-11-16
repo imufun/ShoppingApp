@@ -41,8 +41,8 @@ class ProductViewController: DetailViewController {
         if let product = self.productItem {
             self.productImage.image = product.image
             self.titleLabel.text = "Item name:\n" + product.name
-            if let label = self.priceLabel {
-                label.text = "Price:\n$" + product.price
+            if let cabel = self.priceLabel {
+                cabel.text = "Price:\n$" + product.price
             }
             if let label = self.descriptionLabel {
                 label.text = "Description:\n" + product.details
