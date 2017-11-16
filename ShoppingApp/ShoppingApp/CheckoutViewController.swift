@@ -129,7 +129,7 @@ class CheckoutViewController: DetailViewController {
         }
         var cartPrices = [String]()
         for dindex in 0...countOfCart - 1 {
-            let priceIndex = model.cart[dindex].price.index(model.cart[dindex].price.startIndex, offsetBy: 2)
+            let priceIndex = model.cart[dindex].price.index(model.cart[dindex].price.startIndex, offsetBy: 2) // doesnt work for all models
             let stringApp = model.cart[dindex].price.substring(to: priceIndex)
             if (abs == true && painting == true) {
                 let tempString = String(bothPrices).substring(to: priceIndex)
@@ -155,7 +155,6 @@ class CheckoutViewController: DetailViewController {
         // ok now we have the uid and amount of items we can now set up the urls in another array
         var urls = [String]()
         for vindex in 0...countOfCart - 1 {
-            // ok so not gonna do the extra percent stuff im running tight on time here
             urls.append("http://partiklezoo.com/3dprinting/?action=purchase&" + cartUIDs[vindex] + "=1&total=" + cartPrices[vindex] + "&material=" + material + "&painting=" + isPainting)
         }
         let url = NSURL(string: urls[0])
