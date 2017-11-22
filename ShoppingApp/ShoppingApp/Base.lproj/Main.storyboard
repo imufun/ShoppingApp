@@ -646,7 +646,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdf-tG-wQx">
                                 <rect key="frame" x="273" y="461" width="74" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="uncheckedBox.png"/>
+                                <state key="normal" image="Unchecked"/>
                                 <connections>
                                     <action selector="paintingCheck:" destination="xnW-iD-zIH" eventType="touchUpInside" id="VO0-FO-XUC"/>
                                 </connections>
@@ -661,7 +661,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CF9-tG-350">
                                 <rect key="frame" x="75" y="461" width="104" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="uncheckedBox.png"/>
+                                <state key="normal" image="Unchecked"/>
                                 <connections>
                                     <action selector="absCheck:" destination="xnW-iD-zIH" eventType="touchUpInside" id="EqP-Qj-9hj"/>
                                 </connections>
@@ -846,8 +846,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Unchecked" width="50" height="50"/>
         <image name="home.png" width="128" height="128"/>
-        <image name="uncheckedBox.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Rvk-oW-fKR"/>

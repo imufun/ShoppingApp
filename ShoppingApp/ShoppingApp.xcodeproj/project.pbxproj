@@ -36,8 +36,6 @@
 		ED2AE13C1FB850B600EB46A8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2AE13B1FB850B600EB46A8 /* MapKit.framework */; };
 		ED2AE13E1FB853F900EB46A8 /* FinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AE13D1FB853F900EB46A8 /* FinderViewController.swift */; };
 		ED2AE8F51FB7D7B8008D91D3 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AE8F41FB7D7B8008D91D3 /* CheckoutViewController.swift */; };
-		EDCFAF0E1FBD0C2A005CB859 /* checkedBox.png in Resources */ = {isa = PBXBuildFile; fileRef = EDCFAF0C1FBD0C2A005CB859 /* checkedBox.png */; };
-		EDCFAF0F1FBD0C2A005CB859 /* uncheckedBox.png in Resources */ = {isa = PBXBuildFile; fileRef = EDCFAF0D1FBD0C2A005CB859 /* uncheckedBox.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +91,6 @@
 		ED2AE13B1FB850B600EB46A8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ED2AE13D1FB853F900EB46A8 /* FinderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinderViewController.swift; sourceTree = "<group>"; };
 		ED2AE8F41FB7D7B8008D91D3 /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
-		EDCFAF0C1FBD0C2A005CB859 /* checkedBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkedBox.png; path = "../../swift-assignment/TimeCalculator/checkedBox.png"; sourceTree = "<group>"; };
-		EDCFAF0D1FBD0C2A005CB859 /* uncheckedBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = uncheckedBox.png; path = "../../swift-assignment/TimeCalculator/uncheckedBox.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +126,6 @@
 				ED19AEBC1FB5C3DD00071CC7 /* ShoppingAppTests */,
 				ED19AEC71FB5C3DD00071CC7 /* ShoppingAppUITests */,
 				ED19AEA41FB5C3DC00071CC7 /* Products */,
-				EDCFAF0C1FBD0C2A005CB859 /* checkedBox.png */,
-				EDCFAF0D1FBD0C2A005CB859 /* uncheckedBox.png */,
 				ED19AED61FB5C5CA00071CC7 /* home.png */,
 				ED19AED71FB5C5CA00071CC7 /* product.png */,
 				ED19AEDD1FB5CC7200071CC7 /* map.png */,
@@ -319,8 +313,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED19AEE11FB5CC7200071CC7 /* map.png in Resources */,
-				EDCFAF0E1FBD0C2A005CB859 /* checkedBox.png in Resources */,
-				EDCFAF0F1FBD0C2A005CB859 /* uncheckedBox.png in Resources */,
 				ED19AED81FB5C5CA00071CC7 /* home.png in Resources */,
 				ED19AEE71FB5CD5900071CC7 /* cart.png in Resources */,
 				ED19AEB31FB5C3DC00071CC7 /* LaunchScreen.storyboard in Resources */,
