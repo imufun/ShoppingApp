@@ -14,11 +14,10 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
-    //var objects = [Any]()
     
     let model = SingletonManager.model
     
-    
+    /* inherited function */
     override func awakeFromNib() {
         super.awakeFromNib()
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -27,7 +26,7 @@ class MasterViewController: UITableViewController {
         }
     }
 
-
+    /* inherited function */
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -39,11 +38,13 @@ class MasterViewController: UITableViewController {
         }
     }
 
+    /* inherited function */
     override func viewWillAppear(_ animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         super.viewWillAppear(animated)
     }
 
+    /* inherited function */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,6 +53,7 @@ class MasterViewController: UITableViewController {
 
     // MARK: - Segues
 
+    /* Set the segues for the ModelViewController */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Find out what row was selected
         if let indexPath = self.tableView.indexPathForSelectedRow {
@@ -76,15 +78,21 @@ class MasterViewController: UITableViewController {
     }
 
     // MARK: - Table View
-
+    
+    /* Returns the number of sections (1) */
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
+    /* Set the amount of segues based on the array's count */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.segueArray.count
     }
 
+    /* Set the cell and update the details inside the cell
+     * Since this class is the master class, it doesn't need to put anything important inside except for
+     * template data
+     */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // create a cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -97,14 +105,13 @@ class MasterViewController: UITableViewController {
         return cell
     }
 
+    /* Return false if you do not want the specified item to be editable. */
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return false
     }
     
-    
+    /* Set up the segue */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Set the segue
         self.performSegue(withIdentifier: model.segueArray[indexPath.row], sender: model)
     }
     

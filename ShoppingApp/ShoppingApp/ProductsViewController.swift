@@ -8,6 +8,7 @@
 
 import UIKit
 
+/* ProductsViewController - All the products displayed nicely in a CollectionView */
 class ProductsViewController: DetailViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     let model = SingletonManager.model
@@ -15,16 +16,19 @@ class ProductsViewController: DetailViewController, UICollectionViewDataSource, 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var addToCartButton: UIView!
     
+    /* Call the configureCollectionView() to set up the view when the page loads */
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureCollectionView()
     }
     
+    /* Set the source and delegate for the collection view to be itself */
     func configureCollectionView() {
         self.collectionView!.dataSource = self
         self.collectionView!.delegate = self
     }
     
+    /* Prepare the segue with update details */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // Find out what row was selected
@@ -50,14 +54,17 @@ class ProductsViewController: DetailViewController, UICollectionViewDataSource, 
     
     // MARK: UICollectionViewDataSource
     
+    /* return 1 */
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
+    /* Return the amount of products displayed in this class */
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.products.count
     }
     
+    /* Set the cell details based on the poduct input */
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
         cell.cellImageView.image = model.products[indexPath.row].image
@@ -69,7 +76,8 @@ class ProductsViewController: DetailViewController, UICollectionViewDataSource, 
     }
     
     // MARK: UICollectionViewDelegate
-    
+
+    /* These do nothing but they need to be here cause of inheritance */
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
@@ -80,6 +88,7 @@ class ProductsViewController: DetailViewController, UICollectionViewDataSource, 
     
     // MARK: addItemToCart
     
+    /* IGNORE: Does nothing */
     @IBAction func addItemToCart(_ sender: Any) {
         //model.addItemToCart(model.)
     }

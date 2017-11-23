@@ -1,5 +1,10 @@
 import UIKit
 
+/*                NOTE:
+ *
+ *  THIS CLASS IS NOT IMPLEMENTED PROPERLY
+ *
+ */
 class SearchViewController: DetailViewController, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
 

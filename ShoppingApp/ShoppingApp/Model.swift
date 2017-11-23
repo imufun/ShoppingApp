@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+/* The main class that deals with data */
 class Model {
     var segueArray = [String]()
     var segueDictionary = Dictionary<String, UIImage>();
@@ -18,6 +19,7 @@ class Model {
     
     //static let sharedModel = Model()
     
+    /* Set the variables in the array and ditionary for segue's */
     init() {
         segueArray.append("Homepage")
         segueArray.append("Products")
@@ -39,6 +41,7 @@ class Model {
         
     }
     
+    /* Cart function */
     var cart: [Product] {
         get {
             var selectedProducts = [Product]()
@@ -58,6 +61,7 @@ class Model {
         }
     }
     
+    /* Grab the produts from the website in JSON format */
     func refreshProducts()
     {
         let url = NSURL(string: "http://partiklezoo.com/3dprinting/")
@@ -92,6 +96,7 @@ class Model {
         task.resume()
     }
     
+    /* Load the products into the view */
     func loadProducts() {
         let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -132,6 +137,7 @@ class Model {
         }
     }
     
+    /* Check if the product exists (UID) */
     func checkForProduct(_ searchItem: Product) -> Int {
         var targetIndex = -1
         
@@ -146,6 +152,7 @@ class Model {
         return targetIndex
     }
     
+    /* Add the JSON product to the view to be parsed */
     func addItemToProducts(_ newProduct: Product!, imageURL: String) {
         if (checkForProduct(newProduct) == -1)
         {
@@ -179,6 +186,7 @@ class Model {
         }
     }
     
+    /* Load the image for the product */
     func loadImage(_ imageURL: String) -> UIImage
     {
         
@@ -193,6 +201,7 @@ class Model {
         return image!
     }
     
+    /* Update the products details if something changes */
     func updateProduct(_ newProduct: Product!) {
         let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         

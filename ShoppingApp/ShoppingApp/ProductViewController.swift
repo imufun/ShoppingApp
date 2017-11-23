@@ -8,6 +8,7 @@
 
 import UIKit
 
+/* Displays details on the inidivual product selected by the user when they tap a cell in the ProductsViewController */
 class ProductViewController: DetailViewController {
     
     let model = SingletonManager.model
@@ -24,12 +25,15 @@ class ProductViewController: DetailViewController {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    
+    /* Variable */
     var productItem: Product? {
         didSet {
             
         }
     }
     
+    /* Update the cart button if the item is in or not atm */
     func setCartButton() {
         cartButton.setTitle("Add to cart (+)", for: UIControlState())
         if (self.productItem!.cart) {
@@ -37,6 +41,7 @@ class ProductViewController: DetailViewController {
         }
     }
     
+    /* Configure the view to have the details of the product */
     override func configureView() {
         if let product = self.productItem {
             self.productImage.image = product.image
@@ -51,15 +56,18 @@ class ProductViewController: DetailViewController {
         }
     }
     
+    /* On view update the class */
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
     }
     
+    /* Inherited function */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
+    /* If the user selects a item and puts it in their cart, update the total price */
     @IBAction func cartSelected(_ sender: AnyObject) {
         if (self.productItem!.cart) {
             self.productItem!.cart = false

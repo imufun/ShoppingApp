@@ -8,6 +8,7 @@
 
 import Foundation
 
+/* Do I really need to explain this class? */
 class SingletonManager {
     static let model = Model()
     static let cart = Cart()

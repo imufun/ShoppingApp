@@ -8,6 +8,7 @@
 
 import Foundation
 
+/* Keeps track of the total cart price */
 class Cart {
     var totalPrice = 0 as Double!
 }

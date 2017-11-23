@@ -62,7 +62,6 @@ class FinderViewController: DetailViewController, UISearchBarDelegate {
                 let config = URLSessionConfiguration.default
                 config.isDiscretionary = true
                 let session = URLSession(configuration: config)
-                var result = ""
                 let task = session.dataTask(with: url! as URL, completionHandler:
                     {(data, response, error) in
                         do {
@@ -79,11 +78,7 @@ class FinderViewController: DetailViewController, UISearchBarDelegate {
                         
                 })
                 task.resume()
-                //print(result)
-                //self.closestLocation.text = result
-                
-                
-                
+  
             }else{
                 print(error?.localizedDescription ?? "error")
             }

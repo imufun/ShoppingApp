@@ -8,6 +8,7 @@
 
 import UIKit
 
+/* Cell class that is used in each view that requires a cell (Cart, Products, Search) */
 class Cell : UICollectionViewCell {
     
     @IBOutlet weak var cellLabel: UILabel!

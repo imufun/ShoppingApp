@@ -10,20 +10,21 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    /* Description of the item */
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     
+    /* The referenced image view form the storyboard */
     @IBOutlet weak var imageView: UIImageView!
     
-    
+    /* Update the view */
     var detailItem: UIImage? {
         didSet {
-            // Update the view.
             self.configureView()
         }
     }
-
+    
+    /*  Update the user interface for the detail item. */
     func configureView() {
-        // Update the user interface for the detail item.
         if let detail = self.detailItem {
             if let label = self.detailDescriptionLabel {
                 label.text = detail.description
@@ -32,12 +33,14 @@ class DetailViewController: UIViewController {
         }
     }
 
+    /* Inherited function */
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
     }
 
+    /* Inherited function */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
