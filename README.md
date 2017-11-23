@@ -1,6 +1,7 @@
 # ShoppingApp
-Swift MasterView App
 
+
+## Requirements
 * ~~“Homepage” containing a nice graphic, either as a picture or 3D rendering;~~
 * ~~“List” of products with pictures for each model, together with pricing information for multiple print materials and a button to add items to a shopping cart~~
 * “Search” function whereby users can easily locate a model
