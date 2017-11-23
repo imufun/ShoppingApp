@@ -14,3 +14,16 @@
 * ~~Model-view-controller design pattern with custom classes specifying all the detail view properties and methods, plus a local database containing specifying all the items on the product menu and their metadata (image, pricing, availability) (40%)~~
 * ~~Network database accessibility using the SwiftyJSON framework for checkout (15%) and network-based location mapping for the store finder (15%)~~
 * Commenting code
+..* MasterViewController
+..* DetailViewController
+..* DataCell
+..* Model
+..* SingletonManager
+..* Cart
+..* Cell
+..* ProductsViewController
+..* ProductViewController
+..* CartViewController
+..* CheckoutViewController
+..* FinderViewController
+..* Product
