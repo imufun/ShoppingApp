@@ -102,6 +102,8 @@ class MasterViewController: UITableViewController {
         
         // Set the text in the cell
         cell.textLabel!.text = text
+        
+        cell.imageView!.image = model.segueDictionary[text];
         return cell
     }
 
